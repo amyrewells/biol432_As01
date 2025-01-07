@@ -1,3 +1,5 @@
+#generate data
+
 
 # choose species names
 species_vec<- c("Ally", "Bally", "Cally", "Dally", "Elly")
