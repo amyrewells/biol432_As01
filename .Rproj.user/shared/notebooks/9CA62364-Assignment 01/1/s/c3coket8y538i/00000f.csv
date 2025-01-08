@@ -1,0 +1,6 @@
+"0","sorted_data <- measurements %>%"
+"0","  arrange(Limb_Volume_cm3) %>%"
+"0","  arrange(Observer) %>%"
+"0","  arrange(Species_Name)"
+"0",""
+"0","#data is now sorted alphabetically by species, then observer, then in ascending order of limb volume"

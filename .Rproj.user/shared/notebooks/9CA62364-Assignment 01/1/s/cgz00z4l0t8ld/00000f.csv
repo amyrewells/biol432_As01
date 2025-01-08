@@ -1,0 +1,6 @@
+"0","#create box plot of limb volume by species"
+"0","boxplot<- ggplot(measurements, aes(x=Species_Name, y=Limb_Volume_cm3)) +"
+"0","  geom_boxplot() +"
+"0","  labs(title=""Limb volume by species"", x=""Species"", y=""Limb Volume (cm3)"")"
+"0",""
+"0","print(boxplot)"

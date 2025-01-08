@@ -1,0 +1,7 @@
+"0","#get average limb volume for each species"
+"0","average_volume <- measurements %>%"
+"0","  group_by(Species_Name) %>%"
+"0","  summarize(Average_Volume = mean(Limb_Volume_cm3))"
+"0",""
+"0","#print results"
+"0","print(average_volume)"

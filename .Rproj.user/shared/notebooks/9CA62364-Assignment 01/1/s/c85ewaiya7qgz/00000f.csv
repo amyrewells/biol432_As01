@@ -1,0 +1,7 @@
+"0","#create faceted histogram of limb volume by species"
+"0","histogram<- ggplot(measurements, aes(x=Limb_Volume_cm3)) +"
+"0","  geom_histogram(bins = 5) +"
+"0","  facet_wrap(~Species_Name)+"
+"0","  labs(title=""Limb volume frequency distribution by species"", x=""Limb Volume (cm3)"", y=""Count"")"
+"0",""
+"0","print(histogram)"

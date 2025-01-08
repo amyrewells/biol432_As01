@@ -1,0 +1,32 @@
+{
+    "id": "0007EC0F",
+    "path": "~/biol432_As01/Assignment 01.Rmd",
+    "project_path": "Assignment 01.Rmd",
+    "type": "r_markdown",
+    "hash": "1307472931",
+    "contents": "",
+    "dirty": false,
+    "created": 1736267892605.0,
+    "source_on_save": false,
+    "relative_order": 4,
+    "properties": {
+        "tempName": "Untitled1",
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "74,0",
+        "scrollLine": "92",
+        "rmdVisualMode": "true",
+        "rmdVisualWrapConfigured": "true",
+        "docOutlineVisible": "1",
+        "rmdVisualCollapsedChunks": "",
+        "rmdVisualModeLocation": "1772:0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1736298132,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1736298134855,
+    "read_only": false,
+    "read_only_alternatives": []
+}
