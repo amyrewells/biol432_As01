@@ -1,0 +1,98 @@
+---
+title: "Assignment 01"
+author: "Amyre Wells"
+date: "2025-01-07"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+[Git Repository](https://github.com/amyrewells/biol432_As01)
+
+## Set Up
+
+```{r}
+source('dataGenerato.R')
+#This generates data for species name, limb width, limb length, and observer name columns
+```
+
+```{r}
+source('volumeEstimato.R')
+#This calculates the volume of limbs using the formula for the volume of a cylinder
+```
+
+```{r}
+#load in libraies 
+library(dplyr)
+library(ggplot2)
+```
+
+## Sort data
+
+```{r}
+sorted_data <- measurements %>%
+  arrange(Limb_Volume_cm3) %>%
+  arrange(Observer) %>%
+  arrange(Species_Name)
+
+#data is now sorted alphabetically by species, then observer, then in ascending order of limb volume
+```
+
+## Average Limb Volume by Species
+
+```{r}
+#get average limb volume for each species
+average_volume <- measurements %>%
+  group_by(Species_Name) %>%
+  summarize(Average_Volume = mean(Limb_Volume_cm3))
+
+#print results
+print(average_volume)
+```
+
+## Number of Observations by Species and Observer
+
+```{r}
+#get number of observations for each combination of species/observer
+counts <- measurements %>%
+  group_by(Species_Name, Observer) %>%
+  summarize (Count = n())
+
+#create matrix for count data where x is observers and y is species
+count_matrix <- matrix(counts$Count, nrow = 5, byrow = TRUE)
+colnames(count_matrix)<- observer_vec
+rownames(count_matrix)<- species_vec
+
+#convert to table
+count_table<- as.table(count_matrix)
+
+#print result
+print(count_table)
+```
+
+## Boxplot
+
+```{r}
+#create box plot of limb volume by species
+boxplot<- ggplot(measurements, aes(x=Species_Name, y=Limb_Volume_cm3)) +
+  geom_boxplot() +
+  labs(title="Limb volume by species", x="Species", y="Limb Volume (cm3)")
+
+print(boxplot)
+```
+
+**Figure 1.** Graph depicting limb volume data in cm3 for species Ally, Bally, Cally, Dally, and Elly. Volume was caclulated using the formula for the volume of a cylinder.
+
+## Frequency Histograms
+
+```{r}
+#create faceted histogram of limb volume by species
+histogram<- ggplot(measurements, aes(x=Limb_Volume_cm3)) +
+  geom_histogram(bins = 5) +
+  facet_wrap(~Species_Name)+
+  labs(title="Limb volume frequency distribution by species", x="Limb Volume (cm3)", y="Count")
+
+print(histogram)
+```
+
+**Figure 2** Graph depicting frequency distribution of limb volume data in cm3 for species Ally, Bally, Cally, Dally, and Elly. Volume was calculated using the formula for the volume of a cylinder.
