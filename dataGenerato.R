@@ -2,7 +2,7 @@
 
 
 # choose species names
-species_vec<- c("Ally", "Bally", "Cally", "Dally", "Elly")
+species_vec<- c("Species Ally", "Species Bally", "Species Cally", "Species Dally", "Species Elly")
 # generate species data 
 species_data<- sample(species_vec, 100, replace = TRUE)
 
