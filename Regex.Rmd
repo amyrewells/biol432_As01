@@ -1,0 +1,43 @@
+---
+title: "Regex"
+author: "Amyre"
+date: "2025-02-03"
+output: html_document
+---
+
+## Github link: 
+https://github.com/amyrewells/biol432_As01 
+
+## Group Members 
+Amyre Wells 20320047
+Emilia Gillette 20204160
+Bonnie Rule 20295738
+Krystal Tran 20286689
+
+## Load packages 
+```{r}
+library(dplyr)
+```
+
+## 1
+```{r}
+MData<- read.csv("./measurements.csv")
+```
+
+## 2
+```{r}
+MData<- MData %>% 
+  mutate(Sp = sub("(\\w)\\w+", "\\1.", Species_Name))
+
+```
+
+## 3
+```{r}
+MData_new<- MData %>% 
+  select(Sp, everything(), -Species_Name)
+```
+
+## 4
+```{r}
+write.csv(MData_new, "MeansShort.csv", row.names = FALSE)
+```
